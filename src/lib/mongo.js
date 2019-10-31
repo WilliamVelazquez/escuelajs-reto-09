@@ -7,9 +7,12 @@ const DB_NAME = config.dbName;
 
 const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${DB_NAME}?retryWrites=true&w=majority`;
 
-class MongoConnect {
+class MongoLib {
   constructor() {
-    this.client = new MongoClient(MONGO_URI, { useNewUrlParser: true });
+    this.client = new MongoClient(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     this.dbName = DB_NAME;
   }
 
@@ -29,4 +32,4 @@ class MongoConnect {
   }
 }
 
-module.exports = MongoConnect;
+module.exports = MongoLib;
