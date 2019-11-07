@@ -1,0 +1,12 @@
+{
+  "name": "store_app",
+  "version": 2,
+  "builds": [{ "src": "src/index.js", "use": "@now/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "src/index.js" }],
+  "env": {
+    "DB_USER": "@store_app_db_user",
+    "DB_PASSWORD": "@store_app_db_password",
+    "DB_HOST": "@store_app_db_host",
+    "DB_NAME": "@store_app_db_name"
+  }
+}
